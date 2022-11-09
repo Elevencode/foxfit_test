@@ -8,7 +8,6 @@ part 'transaction_history_bloc.freezed.dart';
 part 'transaction_history_event.dart';
 part 'transaction_history_state.dart';
 
-
 // делаю сразу по привычке bloc, т. к. нет datasource - просто статичные данные прокидываю
 class TransactionHistoryBloc
     extends Bloc<TransactionHistoryEvent, TransactionHistoryState> {
