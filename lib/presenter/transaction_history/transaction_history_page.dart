@@ -84,6 +84,18 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
                     onTransactionTypeChanged: _onTransactionTypeChanged,
                     onChangeDate: _onChangeDate,
                   ),
+                  if (transactions.isEmpty) ...[
+                    Container(
+                      padding: const EdgeInsets.all(24),
+                      color: Colors.white,
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      child: const Text(
+                        'No transactions',
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                  ],
                   for (final transaction in transactionsByDate.entries)
                     Container(
                       color: Colors.white,
@@ -112,6 +124,7 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
     });
   }
 
+//TODO: доделать - значение не получается
   void _onChangeDate() {
     showDatePicker(
       context: context,
@@ -129,6 +142,7 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
     );
   }
 
+//TODO: нужна ли вообще сортировка в таком виде?
   List<Transaction> _sortTransactionsByDate(List<Transaction> transactions) {
     final List<Transaction> list = [];
     list.addAll(transactions);

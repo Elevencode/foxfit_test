@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foxfit_test/presenter/transaction_history/transaction_history_page.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {

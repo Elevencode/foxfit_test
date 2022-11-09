@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:foxfit_test/presenter/main_screen/main_screen.dart';
+import 'package:foxfit_test/presenter/main_page/main_page.dart';
 import 'package:foxfit_test/presenter/transaction_history/bloc/transaction_history_bloc.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       create: (_) => TransactionHistoryBloc(),
       child:  MaterialApp(
         theme: ThemeData(fontFamily: 'Questrial'),
-        home: const MainScreen(),
+        home: const MainPage(),
       ),
     );
   }
