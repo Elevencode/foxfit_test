@@ -33,6 +33,11 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
   @override
   void initState() {
     super.initState();
+
+    BlocProvider.of<TransactionHistoryBloc>(context).add(
+      const TransactionHistoryEvent.started(),
+    );
+
     selectedCurrencyType = CurrencyType.crypto;
     selectedTransactionType = TransactionType.sell;
     transactions = [];
@@ -40,8 +45,6 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<TransactionHistoryBloc>(context)
-        .add(const TransactionHistoryEvent.started());
     return BlocBuilder<TransactionHistoryBloc, TransactionHistoryState>(
       builder: (context, state) => state.map(
         loadInProgress: (_) => const Center(child: CircularProgressIndicator()),
